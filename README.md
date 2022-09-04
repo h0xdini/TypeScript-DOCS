@@ -216,6 +216,21 @@ For example, TypeScript knows that only a string value will have a typeof value 
 
 ![ts2](https://user-images.githubusercontent.com/77200870/188303627-f06c011b-8105-496b-8cab-46cf33d79caf.PNG)
 
+<br/>
+
+### Type Aliases
+<p>We’ve been using object types and union types by writing them directly in type annotations. This is convenient, but it’s common to want to use the same type more than once and refer to it by a single name.</p>
+
+```ts
+type ID = number | string;
+
+type ReturnType = "as-text" | "as-number"
+```
+
+<p>And for objec</p>
+
+![ts3](https://user-images.githubusercontent.com/77200870/188304193-73b58446-149a-4a0e-a923-94fcd8aa154b.PNG)
+
 
 
 
