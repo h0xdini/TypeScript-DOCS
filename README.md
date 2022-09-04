@@ -10,7 +10,7 @@
 
 <br/>
 
-## 0x0 - Basic Types
+## 0x0 - TypeScript Types
 ### The problem 🚧
 ```js
 const message = "Hello World!";
@@ -38,6 +38,7 @@ user.location; // returns undefined
 
 ### The solution ✔️
 > Using the TS static type-checker
+
 ![ts1](https://user-images.githubusercontent.com/77200870/188301352-0307ae22-285c-478b-9ef4-0978d9d331e8.PNG)
 
 <br/>
@@ -49,4 +50,43 @@ user.location; // returns undefined
 ![ts3](https://user-images.githubusercontent.com/77200870/188301465-58e28f16-7f72-4134-8b73-3d4d93e67372.PNG)
 #### [3] Basic Logic Errors
 ![ts5](https://user-images.githubusercontent.com/77200870/188301488-b41113fb-25a4-473c-af0d-50789de889f4.PNG)
+
+--------------------------------------------------------------
+### Types for Tooling 🔨
+> TypeScript core type-checker can provide error messages and code completion as you type in the editor, that's what people refer to as `tooling in TypeScript`
+But tooling in TypeScript goes beyond completions and errors as you type. An editor that supports TypeScript can deliver “quick fixes” to automatically fix errors, refactorings to easily re-organize code, and useful navigation features for jumping to definitions of a variable, or finding all references to a given variable. All of this is built on top of the type-checker and is fully cross-platform.
+
+![ts6](https://user-images.githubusercontent.com/77200870/188301702-fc8f33b6-7730-48ff-86f7-07a46cb74cac.PNG)
+
+<br/>
+
+### Explicit Types
+> With TypeScript we can add `type annotations` on variables and function paramaters
+```ts
+function greet(person: string, date: Date) {
+  console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+```
+<p>Date() in JavaScript returns a string</p>
+![ts7](https://user-images.githubusercontent.com/77200870/188301828-5d469bf9-3976-4aaa-8788-be70afac998d.PNG)
+> Keep in mind, we don’t always have to write explicit type annotations. In many cases, TypeScript can even just infer (or “figure out”) the types for us even if we omit them (Type Inference).
+
+![ts8](https://user-images.githubusercontent.com/77200870/188301879-92b91205-e624-4c4e-bceb-25a1b5f771fe.PNG)
+
+>Even though we didn’t tell TypeScript that `msg` had the type `string` it was able to figure that out. That’s a feature, and it’s best not to add annotations when the type system would end up inferring the same type anyway.
+
+<br/>
+
+### Downleveling
+<p>When we compile the previous example to plain JavaScript we go from</p>
+![ts9](https://user-images.githubusercontent.com/77200870/188301981-d0c754d1-c3f8-4a29-a0b7-c6e19ff30d6d.PNG)
+
+To
+
+![ts1](https://user-images.githubusercontent.com/77200870/188301998-515594bc-fb65-474f-836e-652fd69e0f8b.PNG)
+
+>Template strings are a feature from a version of ECMAScript called ECMAScript 2015 (a.k.a. ECMAScript 6, ES2015, ES6, etc. - don’t ask). TypeScript has the ability to rewrite code from newer versions of ECMAScript to older ones such as ECMAScript 3 or ECMAScript 5 (a.k.a. ES3 and ES5). This process of moving from a newer or “higher” version of ECMAScript down to an older or “lower” one is sometimes called downleveling.
+By default TypeScript targets ES3, an extremely old version of ECMAScript. We could have chosen something a little bit more recent by using the target option. Running with `--target es2015` changes TypeScript to target ECMAScript 2015, meaning code should be able to run wherever ECMAScript 2015 is supported. So running `tsc --target es2015 hello.ts` gives us the same output above for all es6 features
+
+
 
