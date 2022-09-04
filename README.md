@@ -266,7 +266,7 @@ type ReturnType = "as-text" | "as-number"
 ### Functions as Types
 <p>The simplest way to describe a function is with a function type expression. These types are syntactically similar to arrow functions:</p>
 
-![ts5](https://user-images.githubusercontent.com/77200870/188306656-9dc6b135-0cc7-4407-8f12-72d5fd626dff.PNG)
+![ts8](https://user-images.githubusercontent.com/77200870/188306772-b4472a27-f0bf-4100-81f5-0181a08a9d19.PNG)
 
 >The syntax `(a: string) => void` means “a function with one parameter, named a, of type string, that doesn’t have a return value”. Just like with function declarations, if a parameter type isn’t specified, it’s implicitly `any`.
 
@@ -275,6 +275,25 @@ type ReturnType = "as-text" | "as-number"
 <p>Of course, we can use a type alias to name a function type:</p>
 
 ![ts7](https://user-images.githubusercontent.com/77200870/188306694-69a61d2f-64a3-484c-aaa4-7ab921399f0a.PNG)
+
+### **Other Types to Know About**
+#### unknown
+<p>The unknown type represents any value. This is similar to the any type, but is safer because it’s not legal to do anything with an unknown value:</p>
+
+![ts9](https://user-images.githubusercontent.com/77200870/188307405-c9bcd1e3-743f-4339-bd12-f96b91efca1d.PNG)
+
+```ts
+let userInput: unkown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Max'
+
+if (typeof userInput === 'string') {
+  userName = userInput;
+}
+```
+
 
 
 
