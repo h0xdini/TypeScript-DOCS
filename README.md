@@ -192,6 +192,31 @@ For example, TypeScript knows that only a string value will have a typeof value 
 
 ![ts6](https://user-images.githubusercontent.com/77200870/188303024-a4991a52-632e-4423-b7d5-ce035356d2cb.PNG)
 
+<br/>
+
+### Literal Types
+
+![ts8](https://user-images.githubusercontent.com/77200870/188303475-55407fa6-356b-413f-baac-d2294fbcd269.PNG)
+
+<p>By themselves, literal types aren’t very valuable:</p>
+
+![ts9](https://user-images.githubusercontent.com/77200870/188303494-6781b6d0-cea5-4b82-af33-89cda7b842f6.PNG)
+
+<p>It’s not much use to have a variable that can only have one value!</p>
+
+<p>But by combining literals into unions, you can express a much more useful concept - for example, functions that only accept a certain set of known values:</p>
+
+![ts](https://user-images.githubusercontent.com/77200870/188303594-8a132a83-0fd3-4cd9-9bd7-c17036953e84.PNG)
+
+<p>Numeric literal types work the same way:</p>
+
+![ts1](https://user-images.githubusercontent.com/77200870/188303598-54b2d213-f6c2-4cef-a73d-204cbb32e6eb.PNG)
+
+<p>Of course, you can combine these with non-literal types:</p>
+
+![ts2](https://user-images.githubusercontent.com/77200870/188303627-f06c011b-8105-496b-8cab-46cf33d79caf.PNG)
+
+
 
 
 
