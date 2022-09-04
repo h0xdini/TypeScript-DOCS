@@ -167,7 +167,7 @@ By default TypeScript targets ES3, an extremely old version of ECMAScript. We co
 
 <br/>
 
-### Functions
+### Functions 📘
 #### Parameter Type Annotations
 
 <p>When you declare a function, you can add type annotations after each parameter to declare what types of parameters the function accepts. Parameter type annotations go after the parameter name:</p>
