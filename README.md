@@ -257,7 +257,7 @@ type ID = number | string;
 type ReturnType = "as-text" | "as-number"
 ```
 
-<p>And for objec</p>
+<p>And for objects</p>
 
 ![ts3](https://user-images.githubusercontent.com/77200870/188304193-73b58446-149a-4a0e-a923-94fcd8aa154b.PNG)
 
@@ -275,6 +275,8 @@ type ReturnType = "as-text" | "as-number"
 <p>Of course, we can use a type alias to name a function type:</p>
 
 ![ts7](https://user-images.githubusercontent.com/77200870/188306694-69a61d2f-64a3-484c-aaa4-7ab921399f0a.PNG)
+
+<br/>
 
 ### **Other Types to Know About**
 #### unknown
