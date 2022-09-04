@@ -68,7 +68,9 @@ function greet(person: string, date: Date) {
 }
 ```
 <p>Date() in JavaScript returns a string</p>
+
 ![ts7](https://user-images.githubusercontent.com/77200870/188301828-5d469bf9-3976-4aaa-8788-be70afac998d.PNG)
+
 > Keep in mind, we don’t always have to write explicit type annotations. In many cases, TypeScript can even just infer (or “figure out”) the types for us even if we omit them (Type Inference).
 
 ![ts8](https://user-images.githubusercontent.com/77200870/188301879-92b91205-e624-4c4e-bceb-25a1b5f771fe.PNG)
@@ -79,6 +81,7 @@ function greet(person: string, date: Date) {
 
 ### Downleveling
 <p>When we compile the previous example to plain JavaScript we go from</p>
+
 ![ts9](https://user-images.githubusercontent.com/77200870/188301981-d0c754d1-c3f8-4a29-a0b7-c6e19ff30d6d.PNG)
 
 To
