@@ -294,6 +294,13 @@ if (typeof userInput === 'string') {
 }
 ```
 
+<br/>
+
+#### never
+<p>Some functions never return a value:</p>
+
+![ts22](https://user-images.githubusercontent.com/77200870/188307743-d8283964-2565-4a36-b059-c499a81a7ba4.PNG)
+
 
 
 
