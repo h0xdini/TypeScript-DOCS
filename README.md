@@ -82,7 +82,9 @@ function greet(person: string, date: Date) {
 
 **[01] number, string, boolean, Date :**
 
-```js let age: number = 19;```
+```ts 
+let age: number = 19;
+```
 
 <br/>
 
