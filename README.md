@@ -120,6 +120,7 @@ const role: [number, string]
 **[05] Enums:**
 
 <p>Automatically enumerated global constant identifiers</p>
+
 ```ts
 enum Role {ADMIN, READ_ONLY, PUBLISHER}
 ```
@@ -129,7 +130,8 @@ enum Role {ADMIN, READ_ONLY, PUBLISHER}
 - We can overide this by explicitly setting the first value : `enum Role {ADMIN = 5, READ_ONLY, PUBLISHER}`
 - We can set values for all the enums : `enum Role {ADMIN = 5, READ_ONLY = 1000, PUBLISHER= 152}`
 - To access them we use the syntax : `Role.ADMIN`, this returns `5`
-- 
+
+
 <br/>
 
 ### Downleveling
