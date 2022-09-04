@@ -80,7 +80,9 @@ function greet(person: string, date: Date) {
 #### All TypeScript Basic Types
 ![4](https://user-images.githubusercontent.com/77200870/188302167-8b05dade-c874-40a5-916f-27dc6b61fcbd.PNG)
 
-**[01] number, string, boolean, Date :** ```js let age: number = 19;```
+**[01] number, string, boolean, Date :**
+
+```js let age: number = 19;```
 
 <br/>
 
