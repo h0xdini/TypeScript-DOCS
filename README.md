@@ -77,6 +77,21 @@ function greet(person: string, date: Date) {
 
 >Even though we didn’t tell TypeScript that `msg` had the type `string` it was able to figure that out. That’s a feature, and it’s best not to add annotations when the type system would end up inferring the same type anyway.
 
+#### All TypeScript Basic Types
+![4](https://user-images.githubusercontent.com/77200870/188302167-8b05dade-c874-40a5-916f-27dc6b61fcbd.PNG)
+
+[01] number, string, boolean, Date : ```js let age: number = 19;```
+[02] object: 
+```js
+const student: {
+  name: string;
+  age: number;
+} = {
+  name: 'Jakob',
+  age: 19,
+}
+```
+
 <br/>
 
 ### Downleveling
