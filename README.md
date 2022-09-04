@@ -302,12 +302,24 @@ if (typeof userInput === 'string') {
 ![ts22](https://user-images.githubusercontent.com/77200870/188307743-d8283964-2565-4a36-b059-c499a81a7ba4.PNG)
 
 ---------------------------------------------------------------------
-## 0x01 - TypeScript Compiler
+## 0x01 - TypeScript Compiler ⚙️
 ### Compile the entire project at once
 > tsc --init
 
 > tsc
 
-### Run the scripts in watch mode
+<br/>
+
+### Run The Scripts In Watch Mode
 > tsc --watch / tsc -w
 
+<br/>
+
+### Adding and excluding files
+> In `tsconfig.json`, after `compilerOptions` object, we describe `exclude` or `include` arrays
+
+> `include` and `exclude` can have files or folders, but `files` which actually behaves like `include` only has files
+
+<br/>
+
+### Setting a Compilation Target
