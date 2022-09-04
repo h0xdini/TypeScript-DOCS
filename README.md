@@ -81,8 +81,11 @@ function greet(person: string, date: Date) {
 ![4](https://user-images.githubusercontent.com/77200870/188302167-8b05dade-c874-40a5-916f-27dc6b61fcbd.PNG)
 
 **[01] number, string, boolean, Date :** ```js let age: number = 19;```
+
 <br/>
+
 **[02] object:** 
+
 ```js
 const student: {
   name: string;
@@ -92,30 +95,41 @@ const student: {
   age: 19,
 }
 ```
+
 <br/>
+
 **[03] Array:** 
+
 ```js
 let cars: string[] = ['BMW', 'MARCEDES'] // string-only array
 let names: any[] = ['Jakob', 19, 100] // mixed-type array
 ```
+
 <br/>
+
 **[04] Tuples:**
+
 <p>Fixed length arrays</p>
 
 ```js
 const role: [number, string]
 ```
+
 <br/>
+
 **[05] Enums:**
+
 <p>Automatically enumerated global constant identifiers</p>
 ```ts
 enum Role {ADMIN, READ_ONLY, PUBLISHER}
 ```
+
 **Notes**
 - Enum values are automatically assigned values starting from 0
 - We can overide this by explicitly setting the first value : `enum Role {ADMIN = 5, READ_ONLY, PUBLISHER}`
 - We can set values for all the enums : `enum Role {ADMIN = 5, READ_ONLY = 1000, PUBLISHER= 152}`
 - To access them we use the syntax : `Role.ADMIN`, this returns `5`
+- 
 <br/>
 
 ### Downleveling
