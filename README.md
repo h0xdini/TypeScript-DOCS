@@ -161,6 +161,30 @@ By default TypeScript targets ES3, an extremely old version of ECMAScript. We co
 
 <br/>
 
+### Functions
+#### Parameter Type Annotations
+
+<p>When you declare a function, you can add type annotations after each parameter to declare what types of parameters the function accepts. Parameter type annotations go after the parameter name:</p>
+
+![ts](https://user-images.githubusercontent.com/77200870/188305088-a282e66d-52f0-4e57-871b-6b1a5399c9ae.PNG)
+
+<p>When a parameter has a type annotation, arguments to that function will be checked</p>
+
+![ts1](https://user-images.githubusercontent.com/77200870/188305120-7c7ec750-f18a-49c5-9174-23549a09186e.PNG)
+
+>Even if you don’t have type annotations on your parameters, TypeScript will still check that you passed the right number of arguments.
+
+#### Return Type Annotations
+
+<p>You can also add return type annotations. Return type annotations appear after the parameter list:</p>
+
+![ts5](https://user-images.githubusercontent.com/77200870/188305151-82e1c43d-02d0-4c9c-a828-80f4e82a915a.PNG)
+
+**Note** 🚧
+>Much like variable type annotations, you usually don’t need a return type annotation because TypeScript will infer the function’s return type based on its return statements. The type annotation in the above example doesn’t change anything. Some codebases will explicitly specify a return type for documentation purposes, to prevent accidental changes, or just for personal preference.
+
+<br/>
+
 ### Union Types
 
 <p>TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators. Now that we know how to write a few types, it’s time to start combining them in interesting ways.</p>
