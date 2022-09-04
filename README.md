@@ -10,7 +10,7 @@
 
 <br/>
 
-## 0x0 - TypeScript Types
+## 0x00 - TypeScript Types
 ### The problem 🚧
 ```js
 const message = "Hello World!";
@@ -301,7 +301,13 @@ if (typeof userInput === 'string') {
 
 ![ts22](https://user-images.githubusercontent.com/77200870/188307743-d8283964-2565-4a36-b059-c499a81a7ba4.PNG)
 
+---------------------------------------------------------------------
+## 0x01 - TypeScript Compiler
+### Compile the entire project at once
+> tsc --init
 
+> tsc
 
-
+### Run the scripts in watch mode
+> tsc --watch / tsc -w
 
