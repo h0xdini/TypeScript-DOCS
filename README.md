@@ -143,7 +143,13 @@ enum Role {ADMIN, READ_ONLY, PUBLISHER}
 - We can set values for all the enums : `enum Role {ADMIN = 5, READ_ONLY = 1000, PUBLISHER= 152}`
 - To access them we use the syntax : `Role.ADMIN`, this returns `5`
 
+<br/>
 
+**[05] Enums:**
+
+```ts
+let addValues: Function;
+```
 <br/>
 
 ### Downleveling
@@ -255,7 +261,20 @@ type ReturnType = "as-text" | "as-number"
 
 ![ts3](https://user-images.githubusercontent.com/77200870/188304193-73b58446-149a-4a0e-a923-94fcd8aa154b.PNG)
 
+<br/>
 
+### Functions as Types
+<p>The simplest way to describe a function is with a function type expression. These types are syntactically similar to arrow functions:</p>
+
+![ts5](https://user-images.githubusercontent.com/77200870/188306656-9dc6b135-0cc7-4407-8f12-72d5fd626dff.PNG)
+
+>The syntax `(a: string) => void` means “a function with one parameter, named a, of type string, that doesn’t have a return value”. Just like with function declarations, if a parameter type isn’t specified, it’s implicitly `any`.
+
+> Note that the parameter name is required. The function type (string) => void means “a function with a parameter named string of type any“!
+
+<p>Of course, we can use a type alias to name a function type:</p>
+
+![ts7](https://user-images.githubusercontent.com/77200870/188306694-69a61d2f-64a3-484c-aaa4-7ab921399f0a.PNG)
 
 
 
