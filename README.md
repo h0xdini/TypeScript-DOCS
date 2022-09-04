@@ -60,7 +60,7 @@ But tooling in TypeScript goes beyond completions and errors as you type. An edi
 
 <br/>
 
-### Explicit Types
+### Everday Types
 > With TypeScript we can add `type annotations` on variables and function paramaters
 ```ts
 function greet(person: string, date: Date) {
@@ -100,9 +100,17 @@ const student: {
 }
 ```
 
+> The type part of each property is optional, if it's not specified it's assumed to be of type `any`
+
+> We can set a property to be optional by using ? : `obj: { first: string; last?: string }`
+
+<p>In JavaScript, if you access a property that doesn’t exist, you’ll get the value `undefined` rather than a runtime error. Because of this, when you read from an optional property, you’ll have to check for `undefined` before using it.</p>
+
+![ts7](https://user-images.githubusercontent.com/77200870/188303248-50369664-19a9-4736-b26e-c1dd14ae8d76.PNG)
+
 <br/>
 
-**[03] Array:** 
+**[03] Arrays:** 
 
 ```js
 let cars: string[] = ['BMW', 'MARCEDES'] // string-only array
@@ -149,6 +157,42 @@ To
 
 >Template strings are a feature from a version of ECMAScript called ECMAScript 2015 (a.k.a. ECMAScript 6, ES2015, ES6, etc. - don’t ask). TypeScript has the ability to rewrite code from newer versions of ECMAScript to older ones such as ECMAScript 3 or ECMAScript 5 (a.k.a. ES3 and ES5). This process of moving from a newer or “higher” version of ECMAScript down to an older or “lower” one is sometimes called downleveling.
 By default TypeScript targets ES3, an extremely old version of ECMAScript. We could have chosen something a little bit more recent by using the target option. Running with `--target es2015` changes TypeScript to target ECMAScript 2015, meaning code should be able to run wherever ECMAScript 2015 is supported. So running `tsc --target es2015 hello.ts` gives us the same output above for all es6 features
+
+
+<br/>
+
+### Union Types
+
+<p>TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators. Now that we know how to write a few types, it’s time to start combining them in interesting ways.</p>
+
+#### Defining a Union Type
+
+<p>The first way to combine types you might see is a union type. A union type is a type formed from two or more other types, representing values that may be any one of those types. We refer to each of these types as the union’s members.
+Let’s write a function that can operate on strings or numbers:</p>
+
+![ts2](https://user-images.githubusercontent.com/77200870/188302845-31421fe3-f18b-4482-8c63-9295099890c6.PNG)
+
+#### Working with Union Types
+> TypeScript will only allow an operation if it is valid for every member of the union. For example, if you have the union string | number, you can’t use methods that are only available on string
+
+![ts3](https://user-images.githubusercontent.com/77200870/188302912-815d6e0f-c8a7-493f-b119-8dfd847821c9.PNG)
+
+<p>The solution is to narrow the union with code, the same as you would in JavaScript without type annotations. Narrowing occurs when TypeScript can deduce a more specific type for a value based on the structure of the code.
+For example, TypeScript knows that only a string value will have a typeof value "string":</p>
+
+![ts4](https://user-images.githubusercontent.com/77200870/188302940-0a50e18b-84ba-45fb-8f6f-62a521aba5f0.PNG)
+
+<p>Another example is to use a function like Array.isArray:</p>
+
+![ts5](https://user-images.githubusercontent.com/77200870/188302970-b10d19a2-073b-438d-80a3-7dd3390d7b32.PNG)
+
+>Notice that in the else branch, we don’t need to do anything special - if x wasn’t a string[], then it must have been a string.
+
+<p>Sometimes you’ll have a union where all the members have something in common. For example, both arrays and strings have a slice method. If every member in a union has a property in common, you can use that property without narrowing:</p>
+
+![ts6](https://user-images.githubusercontent.com/77200870/188303024-a4991a52-632e-4423-b7d5-ce035356d2cb.PNG)
+
+
 
 
 
