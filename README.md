@@ -338,6 +338,17 @@ if (typeof userInput === 'string') {
 
 **strict**
 
+**noImplicitAny** : in function parameters make sure you specify the type of the parameters
+
+**strictNullChecks** :
+```ts
+const btn = document.querySelector('button')
+
+if (btn) // btn !== undefined && btn !== null {
+  btn.addEventListener...
+}
+```
+
 **noUnusedLocals**
 
 **noUnusedParameters**
