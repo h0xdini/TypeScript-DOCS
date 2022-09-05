@@ -324,4 +324,13 @@ if (typeof userInput === 'string') {
 
 <br/>
 
-### Setting a Compilation Target
+### Compilation Options
+**target** : target ECMASCRIPT version to compile to
+**rootDir** : the folder that contains the `.ts` files
+**outDir** : the folder that will contain the compiled `.js` files
+**sourceMap** : generate `.js.map` files for browser debugging
+**noEmitOnError** : don't compile `.ts` files to `.js` if they contains errors
+**strict**
+**noUnusedLocals**
+**noUnusedParameters**
+**noImplicitReturns**
