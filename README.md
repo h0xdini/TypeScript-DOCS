@@ -357,19 +357,19 @@ if (btn) // btn !== undefined && btn !== null {
 
 ------------------------------------------------------------
 ## Next-Generation JavaScript && TypeScript
-- <p>`let` and `const` are only available in their scope or any lower scope, `var` is only scoped in functions or the global scope</p>
-- <p>**Default function parameters:** default arguments must come at last</p>
+- `let` and `const` are only available in their scope or any lower scope, `var` is only scoped in functions or the global scope
+- **Default function parameters:** default arguments must come at last
 ```js
 const add = (num1: number, num2: number = 5) => {...}
 ```
-- <p>**The spread operator:** we can push to constant arrays, because arrays are object refrences, and when pushing we don't change the address</p>
+- **The spread operator:** we can push to constant arrays, because arrays are object refrences, and when pushing we don't change the addres
 ```js
 const hobbies = ['sports', 'cooking']
 const activeHobbies = ['hiking']
 
 activeHobbies.push(...hobbies)
 ```
-- <p>**Rest parameters:**</p>
+- **Rest parameters:**
 ```js
 const add = (...numbers: number[]) => {
   return numbers.reduce((acc, curr) => acc + curr, 0)
@@ -380,4 +380,9 @@ const add = (...numbers: [number, number, number]) => {
   return numbers.reduce((acc, curr) => acc + curr, 0)
 }
 ```
+- **Destructuring:**
+```js
+// array destructuring
+const [hobby1, hobby2, ...remainingHobbies] = hobbies
 
+```
