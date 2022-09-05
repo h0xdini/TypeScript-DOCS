@@ -355,3 +355,29 @@ if (btn) // btn !== undefined && btn !== null {
 
 **noImplicitReturns**
 
+------------------------------------------------------------
+## Next-Generation JavaScript && TypeScript
+- <p>`let` and `const` are only available in their scope or any lower scope, `var` is only scoped in functions or the global scope</p>
+- <p>**Default function parameters:** default arguments must come at last</p>
+```js
+const add = (num1: number, num2: number = 5) => {...}
+```
+- <p>**The spread operator:** we can push to constant arrays, because arrays are object refrences, and when pushing we don't change the address</p>
+```js
+const hobbies = ['sports', 'cooking']
+const activeHobbies = ['hiking']
+
+activeHobbies.push(...hobbies)
+```
+- <p>**Rest parameters:**</p>
+```js
+const add = (...numbers: number[]) => {
+  return numbers.reduce((acc, curr) => acc + curr, 0)
+}
+
+// using tuples: only accept three arguments
+const add = (...numbers: [number, number, number]) => {
+  return numbers.reduce((acc, curr) => acc + curr, 0)
+}
+```
+
