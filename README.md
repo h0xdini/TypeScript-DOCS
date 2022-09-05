@@ -357,7 +357,13 @@ if (btn) // btn !== undefined && btn !== null {
 
 ------------------------------------------------------------
 ## Next-Generation JavaScript & TypeScript
+
 <p>Because the TypeScript compiler can compile our code down to any JavaScipt version, we still can take advantage of the new features of JavaScript</p>
+
+[> ECMAScript6 compatibility table](https://kangax.github.io/compat-table/es6/)
+
+<br/>
+
 - `let` and `const` are only available in their scope or any lower scope, `var` is only scoped in functions or the global scope
 - **Default function parameters:** default arguments must come at last
 ```js
