@@ -363,7 +363,7 @@ if (btn) // btn !== undefined && btn !== null {
 const add = (num1: number, num2: number = 5) => {...}
 ```
 - **The spread operator:** we can push to constant arrays, because arrays are object refrences, and when pushing we don't change the addres
-[Reference vs Primitive Values](https://academind.com/tutorials/reference-vs-primitive-values)
+[> Reference vs Primitive Values](https://academind.com/tutorials/reference-vs-primitive-values)
 ```js
 const hobbies = ['sports', 'cooking']
 const activeHobbies = ['hiking']
