@@ -444,12 +444,27 @@ Just like with `const`, `let`, and `var`, the initializer of a class property wi
 
 ![10](https://user-images.githubusercontent.com/77200870/188534961-8acfe55c-5791-492d-a746-870c9dc13eab.PNG)
 
+<p>Short-hand inisialization</p>
+<p>With this syntax we don't have to declare the fields then assign their initial values in the constructor, instead we do it in one go</p>
+
+```ts
+class Department {
+    constructor(public name: string, private code: number) {
+    }
+
+    describe(this: Department) {
+        console.log("Department name: " + this.name)
+        console.log("Department code: " + this.code)
+    }
+}
+
+const cs = new Department('computer science', 15263)
+```
+
 <p>There are just a few differences between class constructor signatures and function signatures</p>
 
 - Constructors can’t have type parameters - these belong on the outer class declaration, which we’ll learn about later
 - Constructors can’t have return type annotations - the class instance type is always what’s returned
-
-<br/>
 
 #### Super Calls
 
@@ -500,3 +515,5 @@ public name: string;
 // same as
 name: string;
 ```
+
+
