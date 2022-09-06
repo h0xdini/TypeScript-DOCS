@@ -412,6 +412,8 @@ Just like with `const`, `let`, and `var`, the initializer of a class property wi
 
 ![5](https://user-images.githubusercontent.com/77200870/188534006-1c7f3d4a-8b38-4b13-88ee-a4a9ad568c1e.PNG)
 
+<br/>
+
 ### --strictPropertyInitialization
 
 <p>The strictPropertyInitialization setting in `tsconfig` controls whether class fields need to be initialized in the constructor.</p>
@@ -422,11 +424,15 @@ Just like with `const`, `let`, and `var`, the initializer of a class property wi
 
 ![7](https://user-images.githubusercontent.com/77200870/188534289-2647909f-d984-4fc0-8a15-cd0e72ca5124.PNG)
 
+<br/>
+
 ### readonly
 
 <p>Fields may be prefixed with the readonly modifier. This prevents assignments to the field outside of the constructor.</p>
 
 ![8](https://user-images.githubusercontent.com/77200870/188534541-a32f7e57-422f-42de-b4b0-edcc999b2580.PNG)
+
+<br/>
 
 ### Constructors
 
@@ -443,6 +449,8 @@ Just like with `const`, `let`, and `var`, the initializer of a class property wi
 - Constructors can’t have type parameters - these belong on the outer class declaration, which we’ll learn about later
 - Constructors can’t have return type annotations - the class instance type is always what’s returned
 
+<br/>
+
 #### Super Calls
 
 Just as in JavaScript, if you have a base class, you’ll need to call `super()`; in your constructor body before using any `this.` members
@@ -450,6 +458,8 @@ Just as in JavaScript, if you have a base class, you’ll need to call `super()`
 ![11](https://user-images.githubusercontent.com/77200870/188535201-4f30b644-d797-4888-8341-2d517bf6096c.PNG)
 
 Forgetting to call `super` is an easy mistake to make in JavaScript, but TypeScript will tell you when it’s necessary.
+
+<br/>
 
 ### Methods
 
@@ -473,15 +483,19 @@ describe(this: Department) {
 
 > **Note:** this keyword always refers to the object it's being called on</p>
 
+<br/>
+
 ### Access Modifiers
+
 - private
-```js
+
+```ts
 private employees: string[] = [];
 ```
 
 - public
 
-```js
+```ts
 public name: string;
 // same as
 name: string;
