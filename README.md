@@ -432,6 +432,12 @@ Just like with `const`, `let`, and `var`, the initializer of a class property wi
 
 ![8](https://user-images.githubusercontent.com/77200870/188534541-a32f7e57-422f-42de-b4b0-edcc999b2580.PNG)
 
+In constructor
+
+```ts
+constructor(public readonly name: string, private code: number) {}
+```
+
 <br/>
 
 ### Constructors
@@ -444,13 +450,12 @@ Just like with `const`, `let`, and `var`, the initializer of a class property wi
 
 ![10](https://user-images.githubusercontent.com/77200870/188534961-8acfe55c-5791-492d-a746-870c9dc13eab.PNG)
 
-<p>Short-hand inisialization</p>
+**Short-hand inisialization**
 <p>With this syntax we don't have to declare the fields then assign their initial values in the constructor, instead we do it in one go</p>
 
 ```ts
 class Department {
-    constructor(public name: string, private code: number) {
-    }
+    constructor(public name: string, private code: number) {}
 
     describe(this: Department) {
         console.log("Department name: " + this.name)
@@ -514,6 +519,43 @@ private employees: string[] = [];
 public name: string;
 // same as
 name: string;
+```
+
+<br/>
+
+### Inheritance
+
+#### Extending classes
+
+Classes may `extend` from a base class. A derived class has all the properties and methods of its base class, and also define additional members.
+
+![14](https://user-images.githubusercontent.com/77200870/188539906-4365c313-69ee-4c6c-8162-672971ade27f.PNG)
+
+Redefining the constructor of the derived class
+
+```ts
+class Department {
+    constructor(public readonly name: string, private code: number) {}
+
+    describe(this: Department) {
+        console.log("Department name: " + this.name)
+        console.log("Department code: " + this.code)
+    }
+}
+
+class ITDepartment extends Department {
+    admins: string[]
+
+    constructor(name: string, admins: string[]) {
+        super(name, 123) // a must
+        this.admins = admins
+    }
+}
+
+const cs = new Department('computer science', 15263)
+
+const csIT = new ITDepartment('cyber security', ['Max'])
+
 ```
 
 
