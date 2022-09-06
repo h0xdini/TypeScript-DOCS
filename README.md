@@ -583,6 +583,57 @@ If we compiled this code despite the error, this sample would then crash
 ![4](https://user-images.githubusercontent.com/77200870/188598589-c90f85f3-882d-4ae1-a37c-6ff3443cb272.PNG)
 
 
+### Protected
 
+When a `derived` class extends a `base` class, all `private` fields in the base class won't be accessable in the `derived` class, to get over this behavior, we use `protected` instead of `private` in the base class 
 
+```ts
+class Department {
+    protected employees: string[];
 
+    constructor(public name: string, employees: string[]) {
+        this.employees = employees
+    }
+
+    addEmployee(emp: string) {
+        this.employees.push(emp)
+    }
+
+    displayEmployees() {
+        this.employees.map((emp) => {
+            console.log(emp)
+        })
+    }
+}
+
+class ITDepartment extends Department {
+    private techs: string[]
+
+    constructor(techs: string[]) {
+        super('IT', [])
+        this.techs = techs
+    }
+
+    displayEmployees() {
+        this.employees.map((emp) => {
+            console.log(`Employee name: `, emp)
+        })
+    }
+
+    displayTechs() {
+        this.techs.map((tech) => {
+            console.log(`Technology name: `, tech)
+        })
+    }
+}
+
+const it = new ITDepartment(['NextJS', 'Express'])
+
+it.displayTechs()
+
+it.addEmployee('Jakob')
+it.addEmployee('Houdini')
+it.addEmployee('Robert')
+
+it.displayEmployees()
+```
