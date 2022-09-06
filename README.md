@@ -637,3 +637,31 @@ it.addEmployee('Robert')
 
 it.displayEmployees()
 ```
+
+### Getters And Setters
+
+#### Getters
+Declaration
+```js
+get mostRecentTech() {
+    return this.lastTech
+}
+```
+Access
+```js
+console.log(obj.mostRecentTech)
+```
+
+<br/>
+
+#### Setters
+Declaration
+```js
+set mostRecentReport(value: string) {
+    this.addTech(value)
+}
+```
+Access
+```js
+obj.mostRecentReport = 'TypeScript'
+```
