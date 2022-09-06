@@ -555,7 +555,34 @@ class ITDepartment extends Department {
 const cs = new Department('computer science', 15263)
 
 const csIT = new ITDepartment('cyber security', ['Max'])
-
 ```
+
+<br/>
+
+#### Overriding Methods
+
+A derived class can also override a base class field or property. You can use the `super`. syntax to access base class methods.
+
+> TypeScript enforces that a derived class is always a subtype of its base class.
+
+![1](https://user-images.githubusercontent.com/77200870/188596789-78a3f59d-f517-4b80-8a99-5d86033e63ec.PNG)
+
+> Remember that it’s very common (and always legal!) to refer to a derived class instance through a base class reference
+
+![2](https://user-images.githubusercontent.com/77200870/188598397-742b543a-2613-4789-9915-8031cbe00217.PNG)
+
+**Note**
+> It’s important that a derived class follow its base class contract.
+
+What if `Derived` didn’t follow `Base`’s contract?
+
+![3](https://user-images.githubusercontent.com/77200870/188598190-3e85656c-47b8-4be0-8605-08ce5f937914.PNG)
+
+If we compiled this code despite the error, this sample would then crash
+
+![4](https://user-images.githubusercontent.com/77200870/188598589-c90f85f3-882d-4ae1-a37c-6ff3443cb272.PNG)
+
+
+
 
 
