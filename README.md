@@ -394,3 +394,95 @@ const add = (...numbers: [number, number, number]) => {
 const [hobby1, hobby2, ...remainingHobbies] = hobbies
 ```
 
+---------------------------------------------------------------------------
+## Classes & Objects 💡
+### Fields
+
+<p>A field declaration creates a public writeable property on a class</p>
+
+![3](https://user-images.githubusercontent.com/77200870/188533741-972ae799-9272-45dd-b372-29c0dd6797b6.PNG)
+
+**Note:** <p>As with other locations, the type annotation is optional, but will be an implicit any if not specified.</p>
+
+<p>Fields can also have initializers; these will run automatically when the class is instantiated</p>
+
+![4](https://user-images.githubusercontent.com/77200870/188533893-83d3c884-d506-407f-9244-c54d4001f197.PNG)
+
+Just like with `const`, `let`, and `var`, the initializer of a class property will be used to infer its type
+
+![5](https://user-images.githubusercontent.com/77200870/188534006-1c7f3d4a-8b38-4b13-88ee-a4a9ad568c1e.PNG)
+
+### --strictPropertyInitialization
+
+<p>The strictPropertyInitialization setting in `tsconfig` controls whether class fields need to be initialized in the constructor.</p>
+
+![6](https://user-images.githubusercontent.com/77200870/188534141-2465220e-e6a4-43db-a307-f83be439353a.PNG)
+
+<p>If you intend to definitely initialize a field through means other than the constructor (for example, maybe an external library is filling in part of your class for you), you can use the definite assignment assertion operator, </p>`!`
+
+![7](https://user-images.githubusercontent.com/77200870/188534289-2647909f-d984-4fc0-8a15-cd0e72ca5124.PNG)
+
+### readonly
+
+<p>Fields may be prefixed with the readonly modifier. This prevents assignments to the field outside of the constructor.</p>
+
+![8](https://user-images.githubusercontent.com/77200870/188534541-a32f7e57-422f-42de-b4b0-edcc999b2580.PNG)
+
+### Constructors
+
+<p>Class constructors are very similar to functions. You can add parameters with type annotations, default values, and overloads</p>
+
+![9](https://user-images.githubusercontent.com/77200870/188534703-b7af9af4-f3ea-402d-9afe-6099f2dd35ce.PNG)
+
+<p>With overloads</p>
+
+![10](https://user-images.githubusercontent.com/77200870/188534961-8acfe55c-5791-492d-a746-870c9dc13eab.PNG)
+
+<p>There are just a few differences between class constructor signatures and function signatures</p>
+
+- Constructors can’t have type parameters - these belong on the outer class declaration, which we’ll learn about later
+- Constructors can’t have return type annotations - the class instance type is always what’s returned
+
+#### Super Calls
+
+Just as in JavaScript, if you have a base class, you’ll need to call `super()`; in your constructor body before using any `this.` members
+
+![11](https://user-images.githubusercontent.com/77200870/188535201-4f30b644-d797-4888-8341-2d517bf6096c.PNG)
+
+Forgetting to call `super` is an easy mistake to make in JavaScript, but TypeScript will tell you when it’s necessary.
+
+### Methods
+
+<p>A function property on a class is called a method. Methods can use all the same type annotations as functions and constructors</p>
+
+![12](https://user-images.githubusercontent.com/77200870/188535385-681990c4-7f89-472d-bfd0-eeb3e7708da1.PNG)
+
+Other than the standard type annotations, TypeScript doesn’t add anything else new to methods.
+
+Note that inside a method body, it is still mandatory to access fields and other methods via `this.`. An unqualified name in a method body will always refer to something in the enclosing scope
+
+![13](https://user-images.githubusercontent.com/77200870/188535527-7aa29afd-6d80-4c31-905a-2f71c04807fb.PNG)
+
+<p>And to be more precise about that the this keyword refers to, we can pass it as an argument to the method(it won't affect the other arguments)</p>
+
+```ts
+describe(this: Department) {
+    console.log("Department: " + this.name)
+}
+```
+
+> **Note:** this keyword always refers to the object it's being called on</p>
+
+### Access Modifiers
+- private
+```js
+private employees: string[] = [];
+```
+
+- public
+
+```js
+public name: string;
+// same as
+name: string;
+```
