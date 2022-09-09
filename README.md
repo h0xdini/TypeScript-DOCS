@@ -535,11 +535,12 @@ name: string;
 
 - protected
 
-<p>We can access `base` class's protected fields and methods in the `derived` class.</p>
-
-**But,** <p>we cannot access them directly on an instance of the `derived` class.</p>
-
 #### Cross-hierarchy protected access
+
+  <p>We can access `base` class's protected fields and methods in the `derived` class.</p>
+
+  **But,** <p>we cannot access them directly on an instance of the `derived` class.</p>
+  
 Different OOP languages disagree about whether it’s legal to access a protected member through a base class reference:
 
 ![Screenshot from 2022-09-09 16-29-53](https://user-images.githubusercontent.com/77200870/189386933-09448293-e3ca-438b-95c0-93179078cf7b.png)
