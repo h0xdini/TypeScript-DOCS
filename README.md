@@ -507,11 +507,23 @@ describe(this: Department) {
 
 ### Access Modifiers
 
-- private
+- private (soft privacy)
 
 ```ts
 private employees: string[] = [];
 ```
+
+**Note**
+> Because `private` members aren’t visible to `derived `classes, a `derived` class can’t increase its visibility:
+
+![Screenshot from 2022-09-09 16-38-15](https://user-images.githubusercontent.com/77200870/189388467-d667c367-a667-48aa-af8e-0eeb35e710f0.png)
+
+#### Cross-instance private access
+> Different OOP languages disagree about whether different instances of the same class may access each others’ private members. While languages like Java, C#, C++, Swift, and PHP allow this, Ruby does not.
+>
+> TypeScript does allow cross-instance private access
+
+![Screenshot from 2022-09-09 16-39-48](https://user-images.githubusercontent.com/77200870/189388758-467afa8b-603e-4ba6-ac4f-4245f7582c02.png)
 
 - public
 
@@ -520,6 +532,23 @@ public name: string;
 // same as
 name: string;
 ```
+
+- protected
+
+<p>We can access `base` class's protected fields and methods in the `derived` class.</p>
+
+**But,** <p>we cannot access them directly on an instance of the `derived` class.</p>
+
+#### Cross-hierarchy protected access
+Different OOP languages disagree about whether it’s legal to access a protected member through a base class reference:
+
+![Screenshot from 2022-09-09 16-29-53](https://user-images.githubusercontent.com/77200870/189386933-09448293-e3ca-438b-95c0-93179078cf7b.png)
+
+#### Exposure of protected members
+
+If a field is `protected` in the `base` class we cannot make it `private` in the `derived` class, but we can make it `public`
+
+![Screenshot from 2022-09-09 16-35-29](https://user-images.githubusercontent.com/77200870/189387979-49054815-293c-41b0-a00d-98899ddef41e.png)
 
 <br/>
 
@@ -665,3 +694,5 @@ Access
 ```js
 obj.mostRecentReport = 'TypeScript'
 ```
+
+<br/>
