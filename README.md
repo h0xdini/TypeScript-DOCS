@@ -525,6 +525,8 @@ private employees: string[] = [];
 
 ![Screenshot from 2022-09-09 16-39-48](https://user-images.githubusercontent.com/77200870/189388758-467afa8b-603e-4ba6-ac4f-4245f7582c02.png)
 
+<br/>
+
 - public
 
 ```ts
@@ -532,6 +534,8 @@ public name: string;
 // same as
 name: string;
 ```
+
+<br/>
 
 - protected
 
