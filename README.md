@@ -701,3 +701,40 @@ obj.mostRecentReport = 'TypeScript'
 ```
 
 <br/>
+
+### Static Members
+
+Classes may have `static` members. These members aren’t associated with a particular instance of the class. They can be accessed through the class constructor object itself
+
+![Screenshot from 2022-09-09 18-28-35](https://user-images.githubusercontent.com/77200870/189409981-daac8a15-ca3f-480c-9f4e-0aeebe335dbe.png)
+
+> Static members can also use the same public, protected, and private visibility modifiers:
+
+![Screenshot from 2022-09-09 18-29-23](https://user-images.githubusercontent.com/77200870/189410104-e7b5ae64-e0af-4577-a1aa-7146389afd59.png)
+
+Static members are also inherited
+
+![Screenshot from 2022-09-09 18-30-06](https://user-images.githubusercontent.com/77200870/189410225-84bef361-a4d3-4fd1-8f7d-5d4bea6ed611.png)
+
+#### Special Static Names
+
+It’s generally not safe/possible to overwrite properties from the Function prototype. Because classes are themselves functions that can be invoked with `new`, certain `static` names can’t be used. Function properties like `name`, `length`, and `call` aren’t valid to define as `static` members
+
+![Screenshot from 2022-09-09 18-31-28](https://user-images.githubusercontent.com/77200870/189410706-b39ff844-1bc2-436c-91e4-748e0d1e09e1.png)
+
+#### Why No Static Classes?
+
+we don’t need a “static class” syntax in TypeScript because a regular object (or even top-level function) will do the job just as well
+
+![Screenshot from 2022-09-09 18-34-54](https://user-images.githubusercontent.com/77200870/189410986-e555a1a4-6c21-4477-913e-eed97048d6e6.png)
+
+#### static Blocks in Classes
+
+Static blocks allow you to write a sequence of statements with their own scope that can access private fields within the containing class. This means that we can write initialization code with all the capabilities of writing statements, no leakage of variables, and full access to our class’s internals.
+
+![Screenshot from 2022-09-09 18-35-34](https://user-images.githubusercontent.com/77200870/189411123-66bb870e-cedb-4b7f-b316-3eb0c0d3f63e.png)
+
+
+
+
+
